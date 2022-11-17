@@ -1,0 +1,35 @@
+Spos lab-oba-2:Q's
+1) implement fcfs
+2) implement sjf
+3) implement Round Robin
+4) Implement Bankers algo
+5) implement FIFO
+6) implement LRU
+7) implement matrix multiplication using multithreading with pthread library
+
+(For the codes: explain : code algorithm , the functions you've created, variables declared)
+
+Viva Questions
+1) what is paging
+2) what are page faults
+3) external vs internal fragmentation
+4) what is cpu scheduling algorithm
+5) Preemptive vs non Preemptive
+6) Types of Cpu Scheduler + uses
+(LTS: long term scheduler, MTS,  STS: Short term scheduler)
+
+7) Explain the CPU scheduling times ie- (Arrival time, Burst Time, Completion Time, Waiting Time, Turn Around Time, Response Time, Execution Time)
+
+8) In Bankers Algo : what is safe state, safe state sequence,Max Need, Remaining need
+
+9) Is Banker algo used for  Deadlock avoidance or deadlock detection or both.
+ 
+10) what is time Quantum
+11) basic advantage, disadvantage of all algo
+(FCFS, SJF,RR,FIFO,LRU, Bankers)
+
+12) what is deadlock
+13) Deadlock avoidance, prevention techniques
+
+14) Explain process state diagram
+15) prepare for U3,U4 theory related questions
