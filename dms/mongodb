@@ -1,0 +1,42 @@
+mongosh "mongodb+srv://cluster0.j5gxq8d.mongodb.net/myFirstDatabase" --apiVersion 1 --username root
+
+password : 123456654321
+
+to use or create database:
+use college
+
+to create a collection:
+db.createCollection("student")
+
+to insert a document in student collection:
+db.student.insertOne({roll_no : 1, name: jasper, age:20, division:"ty ISA-1"})
+
+to retreive all documents from collection:
+db.student.find()
+
+to retreive specific documents from collection:
+db.student.find({age:20})
+
+to retreive all documents from collection in an organised way:
+db.student.find().pretty()
+
+many records with one statement:
+db.student.insertMany([{roll_no : 2, name: jasper3, age:22, division:"ty ISA-3"},{roll_no : 3, name: jasper2, age:21, division:"ty ISA-2"}])
+
+Updating one record in collection:
+db.student.updateOne({roll_no: 5 },{$set:{name: "Krystal"}})
+
+Updating multiple records in collection:
+db.student.updateOne({roll_no: 5 },{$set:{name: "Krystal"}},{multi:true})
+
+Delete Single Record
+db.student.deleteOne({roll_no: 3})
+
+Aggregare function 'count'
+db.student.aggregate({$count:"roll_no"})
+
+creating index
+db.student.createIndex({roll_no:-1})
+
+getting index
+db.student.getIndexes()
