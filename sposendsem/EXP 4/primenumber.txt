@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "Enter a number"
+read num
+for((i=2; i<=num/2; i++)) #used num and not dollarnum
+do
+if [ $((num%i)) -eq 0 ]
+then
+echo "$num is not a prime number"
+exit
+fi
+done
+echo "The number is prime"

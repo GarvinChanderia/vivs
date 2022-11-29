@@ -1,0 +1,110 @@
+#!/bin/bash
+#function to get the factorial
+function factorial() {
+echo "Enter a number"
+read num
+input=$num
+fact=1
+while [ $num -gt 1 ]
+do
+fact=$((fact * num))
+num=$((num - 1))
+done
+echo "The factorial of $input is $fact"
+}
+#function for the greatest number
+function greatest(){
+echo "Enter the first number"
+read num1
+echo "Enter the second number"
+read num2
+echo "Enter the third number"
+read num3
+if [ $num1 -gt $num2 ] && [ $num1 -gt $num3 ]
+then
+echo "$num1 is the greatest number"
+elif [ $num2 -gt $num1 ] && [ $num2 -gt $num3 ]
+then
+echo "$num2 is the greatest number"
+else
+echo "$num3 is the greatest number"
+fi
+}
+#function to check whether the number is prime or not
+function prime(){
+echo "Enter a number"
+read num
+for((i=2; i<=num/2; i++)) #used num and not dollarnum
+do
+if [ $((num%i)) -eq 0 ]
+then
+echo "$num is not a prime number"
+exit
+fi
+done
+echo "The number is prime"
+}
+#function to check if the number is a palindrome
+function num_palindrome(){
+echo "Enter a number"
+read num
+s=0
+rev=""
+temp=$num
+while [ $num -gt 0 ]
+do
+s=$(( $num % 10 ))
+num=$(( $num / 10 ))
+rev=$( echo ${rev}${s} )
+done
+if [ $temp -eq $rev ];
+then
+echo "The number is a palindrome"
+else
+echo "Number is not a palindrome"
+fi
+}
+#function to check if the string is a palindrome
+function string_palindrome(){
+echo "Enter a string"
+read input
+reverse=""
+len=${#input}
+for (( i=$len-1; i>=0; i--))
+do
+reverse="$reverse${input:$i:1}"
+done
+if [ $input == $reverse ]
+then
+echo "$input is a palindrome"
+else
+echo "$input is not a palindrome"
+fi
+}
+echo "Select the operation to be performed"
+echo "1. Find the factorial of a number"
+echo "2. Find the greatest of 3 numbers"
+echo "3. Find whether the number is prime or not"
+echo "4. Find if the number is a palindrome"
+echo "5. Find if the string is a palindrome"
+echo -n "Enter your choice [1-5]: "
+while :
+do
+read choice
+case $choice in
+1) factorial;;
+2) greatest;;
+3) prime;;
+4) num_palindrome;;
+5) string_palindrome;;
+*) echo "invalid option";;
+esac
+echo -n "Do you want to continue [1/0] :"
+read option
+if [ $option -eq 1 ]
+then
+echo -n "Enter your choice [1-5] : "
+else
+exit
+fi
+done
